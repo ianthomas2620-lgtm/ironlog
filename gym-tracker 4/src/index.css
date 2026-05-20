@@ -1,0 +1,84 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f0f0f;
+  --surface: #181818;
+  --surface2: #222;
+  --surface3: #2a2a2a;
+  --border: #303030;
+  --text: #f5f5f5;
+  --text-muted: #666;
+  --text-dim: #999;
+  --push:           #ff6b35;
+  --pull:           #00c9a7;
+  --legs:           #a78bfa;
+  --chest-back:     #f59e0b;
+  --arms-shoulders: #ec4899;
+  --success: #22c55e;
+  --danger:  #ef4444;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius: 14px;
+  --radius-sm: 9px;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+body { overflow: hidden; }
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+input[type="number"], input[type="text"] {
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 9px 8px;
+  outline: none;
+  -webkit-appearance: none;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+input[type="number"]:focus, input[type="text"]:focus { border-color: var(--accent, #ff6b35); }
+input[type="number"] { text-align: center; }
+
+select {
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 9px 12px;
+  outline: none;
+  width: 100%;
+}
+
+button { cursor: pointer; border: none; font-family: var(--font-body); }
+::-webkit-scrollbar { width: 0; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.2s ease both; }
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.pop { animation: pop 0.2s ease; }
